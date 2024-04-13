@@ -12,6 +12,6 @@ export const theme: DeckProps['theme'] = {
 	fonts: {
 		header: '"lexend-bold", sans-serif',
 		text: '"lexend", sans-serif',
-		monospace: '"lexend", "Source Code Pro", monospace',
+		monospace: '"anonymous", "Source Code Pro", monospace',
 	},
 };

@@ -1,0 +1,32 @@
+:root {
+	--purple: #d24dff;
+	--red: #ff4d79;
+	--yellow: #ffd24d;
+	--gree: #79ff4d;
+	--blue: #4d79ff;
+	--bg: #ecd9f2;
+	--fg: #401a4c;
+}
+
+@font-face {
+	font-family: 'lexend';
+	font-weight: 400;
+	src: url(./fonts/lexend-variable.ttf) format('truetype-variations');
+	src: url(./fonts/lexend-variable.ttf) format('truetype') tech('variable');
+}
+
+@font-face {
+	font-family: 'lexend-bold';
+	font-weight: 700;
+	src: url(./fonts/lexend-variable.ttf) format('truetype-variations');
+	src: url(./fonts/lexend-variable.ttf) format('truetype') tech('variable');
+}
+
+@font-face {
+	font-family: 'anonymous';
+	src: url(./fonts/anonymous-pro-bold.ttf) format('truetype-variations');
+}
+
+code {
+	font-family: 'anonymous' !important;
+}

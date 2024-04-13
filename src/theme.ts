@@ -4,8 +4,8 @@ import './theme.css';
 export const theme: DeckProps['theme'] = {
 	colors: {
 		primary: 'var(--purple)',
-		secondary: 'var(--read)',
-		tertiary: 'var(--yellow)',
+		secondary: 'var(--red)',
+		tertiary: 'var(--bg)',
 		quaternary: 'var(--green)',
 		quinary: 'var(--blue)',
 	},

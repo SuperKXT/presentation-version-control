@@ -50,7 +50,7 @@ export const Presentation = () => (
 		theme={theme}
 		template={Template}
 	>
-		<Slide backgroundColor='var(--bg)'>
+		<Slide>
 			<FlexBox height='100%'>
 				<SpectacleLogo size={500} />
 			</FlexBox>

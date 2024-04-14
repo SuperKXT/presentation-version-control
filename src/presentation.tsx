@@ -73,6 +73,23 @@ export const Presentation = () => (
 			</FlexBox>
 		</Slide>
 		<Slide>
+			<Heading>What is Version Control?</Heading>
+		</Slide>
+		<Slide>
+			<UnorderedList>
+				<Heading>What is Version Control?</Heading>
+				<ListItem>
+					A system that manages and keeps records of changes made to files
+				</ListItem>
+				<ListItem>Allows for collaboration</ListItem>
+				<ListItem>Associates changes with authors</ListItem>
+				<ListItem>
+					Allows you to revert changes and go back to a previous state
+				</ListItem>
+				<ListItem>Useful beyond code/programming</ListItem>
+			</UnorderedList>
+		</Slide>
+		<Slide>
 			<Heading>Further Reading</Heading>
 			<UnorderedList>
 				<ListItem>
@@ -177,11 +194,6 @@ export const Presentation = () => (
 			}
         `}</CodePane>
 		</Slide>
-		<div>
-			<Slide>
-				<Heading>This is a slide embedded in a div</Heading>
-			</Slide>
-		</div>
 		<MarkdownSlide componentProps={{ color: 'yellow' }}>
 			{`
         # This is a Markdown Slide

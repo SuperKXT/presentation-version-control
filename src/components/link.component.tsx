@@ -1,6 +1,10 @@
 import type { ComponentProps } from 'react';
 
-export const Link = ({ children, ...props }: ComponentProps<'a'>) => {
+export const Link = ({
+	children,
+	label,
+	...props
+}: ComponentProps<'a'> & { label?: string }) => {
 	return (
 		<a
 			{...props}
@@ -15,7 +19,7 @@ export const Link = ({ children, ...props }: ComponentProps<'a'>) => {
 				...props.style,
 			}}
 		>
-			{children}
+			{label ?? children ?? props.href}
 		</a>
 	);
 };

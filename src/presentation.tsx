@@ -12,16 +12,16 @@ import {
 	ListItem,
 	MarkdownSlide,
 	MarkdownSlideSet,
-	Notes,
 	OrderedList,
 	Slide,
 	SlideLayout,
-	SpectacleLogo,
 	Text,
 	UnorderedList,
 	codePaneThemes,
 } from 'spectacle';
 
+import { Hr } from './components/hr.component';
+import { Link } from './components/link.component';
 import { Template } from './template';
 import { theme } from './theme';
 
@@ -51,16 +51,28 @@ export const Presentation = () => (
 		template={Template}
 	>
 		<Slide>
-			<FlexBox height='100%'>
-				<SpectacleLogo size={500} />
+			<FlexBox
+				height='100%'
+				flexDirection='column'
+			>
+				<Heading
+					p={0}
+					px={50}
+					color='bg'
+					backgroundColor='fg'
+					fontSize='h1'
+				>
+					Version Control
+				</Heading>
+				<Hr style={{ width: '75%' }} />
+				<Heading fontSize='h3'>Git & GitHub</Heading>
+				<Link
+					href='https://superkxt.com/version-control'
+					style={{ position: 'absolute', bottom: 50 }}
+				>
+					https://superkxt.com/version-control
+				</Link>
 			</FlexBox>
-			<Notes>
-				Spectacle supports notes per slide.
-				<ol>
-					<li>Notes can now be HTML markup!</li>
-					<li>Lists can make it easier to make points.</li>
-				</ol>
-			</Notes>
 		</Slide>
 		<Slide>
 			<FlexBox

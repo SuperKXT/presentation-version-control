@@ -69,75 +69,29 @@ export const Presentation = () => (
 				<Link
 					href='https://superkxt.com/version-control'
 					style={{ position: 'absolute', bottom: 50 }}
-				>
-					https://superkxt.com/version-control
-				</Link>
+				/>
 			</FlexBox>
 		</Slide>
 		<Slide>
-			<FlexBox
-				height='100%'
-				flexDirection='column'
-			>
-				<Heading
-					margin='0px'
-					fontSize='150px'
-				>
-					✨<i>Spectacle</i> ✨
-				</Heading>
-				<Heading
-					margin='0px'
-					fontSize='h2'
-				>
-					A ReactJS Presentation Library
-				</Heading>
-				<Heading
-					margin='0px 32px'
-					color='primary'
-					fontSize='h3'
-				>
-					Where you can write your decks in JSX, Markdown, or MDX!
-				</Heading>
-			</FlexBox>
-		</Slide>
-		<Slide
-			backgroundColor='tertiary'
-			backgroundImage='url(https://github.com/FormidableLabs/dogs/blob/main/src/beau.jpg?raw=true)'
-			backgroundOpacity={0.5}
-			transition={{
-				from: {
-					transform: 'scale(0.5) rotate(45deg)',
-					opacity: 0,
-				},
-				enter: {
-					transform: 'scale(1) rotate(0)',
-					opacity: 1,
-				},
-				leave: {
-					transform: 'scale(0.2) rotate(315deg)',
-					opacity: 0,
-				},
-			}}
-		>
-			<Heading>Custom Backgrounds</Heading>
+			<Heading>Further Reading</Heading>
 			<UnorderedList>
 				<ListItem>
-					<CodeSpan>backgroundColor</CodeSpan>
+					<Link href='https://www.rithmschool.com/courses/git' />
 				</ListItem>
 				<ListItem>
-					<CodeSpan>backgroundImage</CodeSpan>
+					<Link href='https://www.codecademy.com/learn/learn-git' />
 				</ListItem>
 				<ListItem>
-					<CodeSpan>backgroundOpacity</CodeSpan>
+					<Link href='https://missing.csail.mit.edu/2020/version-control' />
 				</ListItem>
 				<ListItem>
-					<CodeSpan>backgroundSize</CodeSpan>
+					<Link href='https://ohshitgit.com' />
 				</ListItem>
 				<ListItem>
-					<CodeSpan>backgroundPosition</CodeSpan>
+					<Link href='https://jvns.ca/blog/2024/01/26/inside-git' />
 				</ListItem>
 				<ListItem>
-					<CodeSpan>backgroundRepeat</CodeSpan>
+					<Link href='https://jvns.ca/blog/2024/03/08/how-head-works-in-git' />
 				</ListItem>
 			</UnorderedList>
 		</Slide>

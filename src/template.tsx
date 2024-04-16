@@ -9,7 +9,7 @@ export const Template = (props: {
 				bottom: 10,
 				right: 15,
 				color: 'var(--fg)',
-				fontSize: '2.5rem',
+				fontSize: '1.5rem',
 				fontFamily: '"lexend"',
 				lineHeight: 1,
 			}}

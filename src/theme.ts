@@ -1,9 +1,12 @@
+import { codePaneThemes } from 'spectacle';
+
+import type { CSSProperties } from 'react';
 import type { DeckProps } from 'spectacle';
 import './theme.css';
 
 export const theme: DeckProps['theme'] = {
 	colors: {
-		primary: 'var(--purple)',
+		primary: 'var(--fg)',
 		secondary: 'var(--fg)',
 		tertiary: 'var(--bg)',
 		quaternary: 'var(--green)',
@@ -18,3 +21,9 @@ export const theme: DeckProps['theme'] = {
 		monospace: '"anonymous", "Source Code Pro", monospace',
 	},
 };
+
+// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+export const codeTheme = codePaneThemes.dracula as Record<
+	string,
+	CSSProperties
+>;

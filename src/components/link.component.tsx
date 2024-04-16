@@ -7,15 +7,18 @@ export const Link = ({
 }: ComponentProps<'a'> & { label?: string }) => {
 	return (
 		<a
+			target='_blank'
 			{...props}
 			style={{
-				color: 'var(--red)',
+				color: 'var(--blue)',
 				padding: '5px 10px',
 				borderRadius: '5px',
-				textDecorationColor: 'currentcolor',
+				textDecorationColor: 'var(--grey-3)',
 				textDecorationSkipInk: 'none',
+				textDecorationThickness: 3,
+				textUnderlineOffset: 2,
 				fontSize: 25,
-				border: '1px solid currentColor',
+				border: '2px solid var(--grey-2)',
 				...props.style,
 			}}
 		>

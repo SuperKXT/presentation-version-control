@@ -1,5 +1,8 @@
 {
-	"words": ["lexend"],
+	"words": [
+		"lexend",
+		"xkcd"
+	],
 	"ignorePaths": [
 		"package-lock.json",
 		"pnpm-lock.yaml",

@@ -26,6 +26,8 @@ import gitBreakdown4 from './assets/git-breakdown-4.jpg';
 import gitBreakdown5 from './assets/git-breakdown-5.jpg';
 import gitBreakdown6 from './assets/git-breakdown-6.jpg';
 import gitBreakdown7 from './assets/git-breakdown-7.jpg';
+import gitBreakdown8 from './assets/git-breakdown-8.jpg';
+import gitBreakdown9 from './assets/git-breakdown-9.jpg';
 import gitInterfaces from './assets/git-interfaces.jpg';
 import gitLogo from './assets/git.svg';
 import githubLogo from './assets/github-logo.svg';
@@ -80,6 +82,8 @@ const gitBreakdown = [
 	{ command: 'git push origin dev', image: gitBreakdown5 },
 	{ command: 'git reset HEAD~3', image: gitBreakdown6 },
 	{ command: 'git reset --hard origin/dev', image: gitBreakdown7 },
+	{ command: 'git switch main', image: gitBreakdown8 },
+	{ command: 'git pull origin dev', image: gitBreakdown9 },
 ];
 
 export const Presentation = () => (
@@ -403,7 +407,7 @@ export const Presentation = () => (
 						language='bash'
 						theme={codeTheme}
 					>
-						{"git commit -m 'Add `example.txt file"}
+						{"git commit -m 'Add `example.txt` file'"}
 					</CodePane>
 				</Fragment>,
 				<Fragment key='4'>
@@ -494,7 +498,7 @@ export const Presentation = () => (
 				'A group of commits',
 				'All commits live on a branch',
 				'There can be many branches, but each repo must have one default branch',
-				'Each branch is a separate different version of the repo',
+				'Each branch is a different version of the repo',
 				<Fragment key='5'>
 					The default branch is called{' '}
 					<CodeSpan style={codeSpanStyles}>master</CodeSpan> or{' '}
@@ -728,38 +732,48 @@ export const Presentation = () => (
 			>
 				Two-Factor Authentication (2FA)
 			</Heading>
-			<Appear>
-				<Text style={{ fontFamily: 'lexend-bold' }}>Methods of 2FA</Text>
-				<UnorderedList
-					className='compact'
-					style={{ fontSize: '1.75rem' }}
-				>
+			<Text style={{ fontFamily: 'lexend-bold' }}>Methods of 2FA</Text>
+			<UnorderedList
+				className='compact'
+				style={{ fontSize: '1.75rem' }}
+			>
+				<Appear>
 					<ListItem>
 						<strong>SMS Passcode</strong>: A one-time code sent via text message
 						to your phone. (Convenient but insecure. Susceptible to sim swapping
 						attacks)
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						<strong>Email</strong>: Send a link to your email with a one-time
 						code
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						<strong>Push Notifications</strong>: Approve login attempts directly
 						from your phone with a tap
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						<strong>Authenticator App</strong>: Time-based one-time codes on a
 						phone app
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						<strong>Security Key</strong>: Physical device that plugs into your
 						computer or phone to generate login codes
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						<strong>Biometrics</strong>: Fingerprints, IRIS, face recognition
 					</ListItem>
-				</UnorderedList>
-			</Appear>
+				</Appear>
+			</UnorderedList>
 			<Appear>
 				<Text style={calloutStyles}>
 					<strong>Recommendation</strong>: 2FAS (Google Authenticator, Microsoft
@@ -781,22 +795,30 @@ export const Presentation = () => (
 			</Appear>
 			<Appear>
 				<Text style={{ fontFamily: 'lexend-bold' }}>What they do:</Text>
-				<UnorderedList style={{ fontSize: '1.75rem' }}>
+			</Appear>
+			<UnorderedList style={{ fontSize: '1.75rem' }}>
+				<Appear>
 					<ListItem>
 						Generate strong, random passwords for each website or service
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						Securely store your passwords behind a single master password
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						Automatically fill in login credentials on websites and apps
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						Can store secure notes and other sensitive information like bank
 						accounts, backup codes
 					</ListItem>
-				</UnorderedList>
-			</Appear>
+				</Appear>
+			</UnorderedList>
 		</Slide>
 		<Slide>
 			<Heading
@@ -804,40 +826,50 @@ export const Presentation = () => (
 			>
 				Password Managers
 			</Heading>
-			<Appear>
-				<Text style={{ fontFamily: 'lexend-bold' }}>
-					Why use a password manager?
-				</Text>
-				<UnorderedList
-					className='compact'
-					style={{ fontSize: '1.75rem' }}
-				>
+			<Text style={{ fontFamily: 'lexend-bold' }}>
+				Why use a password manager?
+			</Text>
+			<UnorderedList
+				className='compact'
+				style={{ fontSize: '1.75rem' }}
+			>
+				<Appear>
 					<ListItem>
 						<strong>Stronger Passwords</strong>: Eliminates the risk of weak and
 						duplicate passwords
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						<strong>Improved Security</strong>: Reduces the chance of hacking
 						due to password breaches
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						<strong>Convenience</strong>: Auto-fill saves time and frustration
 						by entering login details automatically
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						<strong>Organization</strong>: Keeps all your passwords in one
 						secure place
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						<strong>Security Features</strong>: Many offer additional features
 						like two-factor authentication and secure password sharing
 					</ListItem>
+				</Appear>
+				<Appear>
 					<ListItem>
 						<strong>Cross-Platform Support</strong>: Access your passwords from
 						any device with the password manager app
 					</ListItem>
-				</UnorderedList>
-			</Appear>
+				</Appear>
+			</UnorderedList>
 			<Appear>
 				<Text style={calloutStyles}>
 					<strong>Recommendation</strong>: BitWarden

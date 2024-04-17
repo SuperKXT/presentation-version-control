@@ -27,6 +27,11 @@ import gitBreakdown5 from './assets/git-breakdown-5.jpg';
 import gitBreakdown6 from './assets/git-breakdown-6.jpg';
 import gitBreakdown7 from './assets/git-breakdown-7.jpg';
 import gitInterfaces from './assets/git-interfaces.jpg';
+import gitLogo from './assets/git.svg';
+import githubLogo from './assets/github-logo.svg';
+import githubMark from './assets/github-mark.svg';
+import inviteQr from './assets/invite-qr.jpeg';
+import oneMoreThing from './assets/one-more-thing.gif';
 import pushAndPull1 from './assets/push-and-pull-1.jpg';
 import pushAndPull2 from './assets/push-and-pull-2.jpg';
 import pushAndPull3 from './assets/push-and-pull-3.jpg';
@@ -55,6 +60,16 @@ const slideHeadingStyles: CSSProperties = {
 	color: 'var(--bg)',
 	minWidth: 450,
 	textAlign: 'center',
+};
+
+const calloutStyles: CSSProperties = {
+	fontSize: '1.5em',
+	textWrap: 'balance',
+	width: '75%',
+	marginInline: 'auto',
+	backgroundColor: 'var(--grey-3)',
+	textAlign: 'center',
+	borderRadius: 10,
 };
 
 const gitBreakdown = [
@@ -465,17 +480,7 @@ export const Presentation = () => (
 				</Appear>
 			</OrderedList>
 			<Appear>
-				<Text
-					style={{
-						fontSize: '1.5em',
-						textWrap: 'balance',
-						width: '75%',
-						marginInline: 'auto',
-						backgroundColor: 'var(--grey-3)',
-						textAlign: 'center',
-						borderRadius: 10,
-					}}
-				>
+				<Text style={calloutStyles}>
 					In addition to the general commit guidelines, organizations and
 					projects can have their own preferences and conventions for commit
 					messages
@@ -511,21 +516,20 @@ export const Presentation = () => (
 				<Image src={branches} />
 			</FlexBox>
 		</Slide>
-		<Slide>
-			<Heading
-				style={{ marginBlock: '0px', paddingBlock: '0px', textAlign: 'left' }}
-			>
+		<Slide padding={10}>
+			<Text style={{ margin: '0px', paddingBlock: '0px', textAlign: 'left' }}>
 				Git Overview
-			</Heading>
+			</Text>
 			<FlexBox style={{ flexGrow: 1, justifyContent: 'center', marginTop: 20 }}>
-				<Stepper values={[0, 1, 2, 3, 4, 5, 6]}>
+				<Stepper values={gitBreakdown}>
 					{(value) => {
-						const curr = gitBreakdown[value as number];
+						const curr = value as (typeof gitBreakdown)[number] | undefined;
 						if (!curr) return null;
 						return (
 							<>
 								<CodePane
 									language='bash'
+									showLineNumbers={false}
 									theme={codeTheme}
 								>
 									{curr.command}
@@ -560,5 +564,301 @@ export const Presentation = () => (
 				</ListItem>
 			</UnorderedList>
 		</Slide>
+		<Slide>
+			<Grid
+				style={{
+					height: '100%',
+					gridTemplateColumns: '1fr 1fr',
+					placeItems: 'center',
+				}}
+			>
+				<Heading style={slideHeadingStyles}>GitHub</Heading>
+				<FlexBox style={{ flexDirection: 'column', gap: 30, width: 275 }}>
+					<Image src={githubMark} />
+					<Image src={githubLogo} />
+				</FlexBox>
+			</Grid>
+		</Slide>
+		<SlideLayout.List
+			title='What is GitHub?'
+			titleProps={{ style: { marginBlock: '0px', paddingBlock: '0px' } }}
+			items={[
+				'A website for storing your git projects',
+				'Users can have personal repositories, both public and private',
+				'Organizations can have repositories with fine-grained access control',
+				'Home to many open-source projects',
+				'Alternatives: BitBucket, GitLab',
+			]}
+			animateListItems
+		/>
+		<SlideLayout.List
+			title='Pull Requests'
+			titleProps={{ style: { marginBlock: '0px', paddingBlock: '0px' } }}
+			items={[
+				'Proposal to merge changes from one branch into another',
+				'Includes a title and description',
+				'Changes can be discussed and reviewed by collaborators',
+				'Reviewers can request changes required to satisfy requirements/standards',
+				'Follow-up commits are added in response to feedback',
+				'Merged only if given the green light by reviewers',
+			]}
+			animateListItems
+		/>
+		<SlideLayout.List
+			title='README.md'
+			titleProps={{ style: { marginBlock: '0px', paddingBlock: '0px' } }}
+			items={[
+				'Information about the project included in this document',
+				'Uses markdown syntax. Clear and easy to read',
+				'Can have info about getting started or deployment',
+				'Can include info about code structure and standards',
+				'Can include technical details about the project',
+				'Can serve as documentation',
+			]}
+			animateListItems
+		/>
+		<SlideLayout.List
+			title='SSH Keys'
+			titleProps={{ style: { marginBlock: '0px', paddingBlock: '0px' } }}
+			listProps={{ style: { fontSize: '2.5em' }, className: 'compact' }}
+			items={[
+				'Secure Shell Protocol',
+				'Cryptographic network protocol. Secure access over insecure network',
+				'username/password can be cumbersome and insecure. Doubly so when using 2FA.',
+				'Makes using multiple accounts trivial',
+				'Access to an SSH key can be easily revoked',
+				'Commit Signing: verifying that the commit came from a trusted source',
+				<Link
+					key='7'
+					href='https://docs.github.com/en/authentication'
+				/>,
+			]}
+			animateListItems
+		/>
+		<SlideLayout.List
+			title='Other Offerings'
+			titleProps={{ style: { marginBlock: '0px', paddingBlock: '0px' } }}
+			items={[
+				<Fragment key='1'>
+					<strong>Actions</strong> - Automate your workflows. (Tests, linting,
+					CI/CD)
+				</Fragment>,
+				<Fragment key='2'>
+					<strong>Issues</strong> - Keeping track of bugs, feature requests, and
+					ongoing work
+				</Fragment>,
+				<Fragment key='3'>
+					<strong>Releases</strong> - Automatically create and share build
+					artifacts and setups
+				</Fragment>,
+				<Fragment key='4'>
+					<strong>Projects</strong> - Basic project management workflows
+				</Fragment>,
+				<Fragment key='5'>
+					<strong>GH CLI</strong> - Embrace the terminal
+				</Fragment>,
+			]}
+			animateListItems
+		/>
+		<Slide>
+			<Heading
+				style={{ textAlign: 'left', marginBlock: '0px', paddingBlock: '0px' }}
+			>
+				Accepting Invites
+			</Heading>
+			<FlexBox style={{ flexGrow: 1, flexDirection: 'column', gap: 20 }}>
+				<Image
+					src={inviteQr}
+					style={{ width: '35%' }}
+				/>
+				<Link href='bit.ly/accepting-invites' />
+			</FlexBox>
+		</Slide>
+		<Slide>
+			<Grid
+				style={{
+					height: '100%',
+					gridTemplateColumns: '1fr 1fr',
+					placeItems: 'center',
+				}}
+			>
+				<Heading style={slideHeadingStyles}>Misc</Heading>
+				<Image src={oneMoreThing} />
+			</Grid>
+		</Slide>
+		<Slide>
+			<Heading
+				style={{ textAlign: 'left', marginBlock: '0px', padding: '0px' }}
+			>
+				Two-Factor Authentication (2FA)
+			</Heading>
+			<Appear>
+				<Text style={{ fontSize: '2rem', marginBlock: '0px' }}>
+					An extra layer of security for your online accounts
+				</Text>
+			</Appear>
+			<Appear>
+				<Text style={{ fontFamily: 'lexend-bold' }}>How it works:</Text>
+				<UnorderedList style={{ fontSize: '1.75rem' }}>
+					<ListItem>
+						1st Factor: Something you know, like your password or PIN
+					</ListItem>
+					<ListItem>
+						2nd Factor: Something you have, like your phone, a security key, or
+						biometrics
+					</ListItem>
+				</UnorderedList>
+			</Appear>
+			<Appear>
+				<Text style={{ fontFamily: 'lexend-bold' }}>Why use it?</Text>
+				<UnorderedList style={{ fontSize: '1.75rem' }}>
+					<ListItem>
+						Adds an extra hurdle for malicious actors, even if they steal your
+						password
+					</ListItem>
+					<ListItem>
+						Keep sensitive information like financial records secure
+					</ListItem>
+				</UnorderedList>
+			</Appear>
+		</Slide>
+		<Slide>
+			<Heading
+				style={{ textAlign: 'left', marginBlock: '0px', padding: '0px' }}
+			>
+				Two-Factor Authentication (2FA)
+			</Heading>
+			<Appear>
+				<Text style={{ fontFamily: 'lexend-bold' }}>Methods of 2FA</Text>
+				<UnorderedList
+					className='compact'
+					style={{ fontSize: '1.75rem' }}
+				>
+					<ListItem>
+						<strong>SMS Passcode</strong>: A one-time code sent via text message
+						to your phone. (Convenient but insecure. Susceptible to sim swapping
+						attacks)
+					</ListItem>
+					<ListItem>
+						<strong>Email</strong>: Send a link to your email with a one-time
+						code
+					</ListItem>
+					<ListItem>
+						<strong>Push Notifications</strong>: Approve login attempts directly
+						from your phone with a tap
+					</ListItem>
+					<ListItem>
+						<strong>Authenticator App</strong>: Time-based one-time codes on a
+						phone app
+					</ListItem>
+					<ListItem>
+						<strong>Security Key</strong>: Physical device that plugs into your
+						computer or phone to generate login codes
+					</ListItem>
+					<ListItem>
+						<strong>Biometrics</strong>: Fingerprints, IRIS, face recognition
+					</ListItem>
+				</UnorderedList>
+			</Appear>
+			<Appear>
+				<Text style={calloutStyles}>
+					<strong>Recommendation</strong>: 2FAS (Google Authenticator, Microsoft
+					Authenticator)
+				</Text>
+			</Appear>
+		</Slide>
+		<Slide>
+			<Heading
+				style={{ textAlign: 'left', marginBlock: '0px', padding: '0px' }}
+			>
+				Password Managers
+			</Heading>
+			<Appear>
+				<Text style={{ fontSize: '2rem', marginBlock: '0px' }}>
+					Secure applications that generate, store, and manage strong, unique
+					passwords
+				</Text>
+			</Appear>
+			<Appear>
+				<Text style={{ fontFamily: 'lexend-bold' }}>What they do:</Text>
+				<UnorderedList style={{ fontSize: '1.75rem' }}>
+					<ListItem>
+						Generate strong, random passwords for each website or service
+					</ListItem>
+					<ListItem>
+						Securely store your passwords behind a single master password
+					</ListItem>
+					<ListItem>
+						Automatically fill in login credentials on websites and apps
+					</ListItem>
+					<ListItem>
+						Can store secure notes and other sensitive information like bank
+						accounts, backup codes
+					</ListItem>
+				</UnorderedList>
+			</Appear>
+		</Slide>
+		<Slide>
+			<Heading
+				style={{ textAlign: 'left', marginBlock: '0px', padding: '0px' }}
+			>
+				Password Managers
+			</Heading>
+			<Appear>
+				<Text style={{ fontFamily: 'lexend-bold' }}>
+					Why use a password manager?
+				</Text>
+				<UnorderedList
+					className='compact'
+					style={{ fontSize: '1.75rem' }}
+				>
+					<ListItem>
+						<strong>Stronger Passwords</strong>: Eliminates the risk of weak and
+						duplicate passwords
+					</ListItem>
+					<ListItem>
+						<strong>Improved Security</strong>: Reduces the chance of hacking
+						due to password breaches
+					</ListItem>
+					<ListItem>
+						<strong>Convenience</strong>: Auto-fill saves time and frustration
+						by entering login details automatically
+					</ListItem>
+					<ListItem>
+						<strong>Organization</strong>: Keeps all your passwords in one
+						secure place
+					</ListItem>
+					<ListItem>
+						<strong>Security Features</strong>: Many offer additional features
+						like two-factor authentication and secure password sharing
+					</ListItem>
+					<ListItem>
+						<strong>Cross-Platform Support</strong>: Access your passwords from
+						any device with the password manager app
+					</ListItem>
+				</UnorderedList>
+			</Appear>
+			<Appear>
+				<Text style={calloutStyles}>
+					<strong>Recommendation</strong>: BitWarden
+				</Text>
+			</Appear>
+		</Slide>
+		<SlideLayout.Center>
+			<Heading
+				style={{
+					display: 'inline-flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+				}}
+			>
+				Let&apos;s{' '}
+				<Image
+					style={{ display: 'inline-flex', margin: 0, padding: 0 }}
+					src={gitLogo}
+				/>{' '}
+				going!
+			</Heading>
+		</SlideLayout.Center>
 	</Deck>
 );

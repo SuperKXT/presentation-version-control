@@ -381,6 +381,7 @@ export const Presentation = () => (
 					</Text>
 					<CodePane
 						language='bash'
+						showLineNumbers={false}
 						theme={codeTheme}
 					>
 						{"echo 'hello world!' > example.txt"}
@@ -392,6 +393,7 @@ export const Presentation = () => (
 					</Text>
 					<CodePane
 						language='bash'
+						showLineNumbers={false}
 						theme={codeTheme}
 					>{dedent`
 						git add example.txt
@@ -405,6 +407,7 @@ export const Presentation = () => (
 					</Text>
 					<CodePane
 						language='bash'
+						showLineNumbers={false}
 						theme={codeTheme}
 					>
 						{"git commit -m 'Add `example.txt` file'"}
@@ -416,6 +419,7 @@ export const Presentation = () => (
 					</Text>
 					<CodePane
 						language='bash'
+						showLineNumbers={false}
 						theme={codeTheme}
 					>
 						{'git push origin main'}
@@ -675,7 +679,7 @@ export const Presentation = () => (
 					src={inviteQr}
 					style={{ width: '35%' }}
 				/>
-				<Link href='bit.ly/accepting-invites' />
+				<Link href='https://bit.ly/accepting-invites' />
 			</FlexBox>
 		</Slide>
 		<Slide>

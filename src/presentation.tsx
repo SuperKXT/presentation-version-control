@@ -215,7 +215,13 @@ export const Presentation = () => (
 		</SlideLayout.Center>
 		<SlideLayout.List
 			title='How Git Works?'
-			titleProps={{ style: { marginBlock: '0px', paddingBlock: '0px' } }}
+			titleProps={{
+				style: {
+					marginBlock: '0px',
+					marginBottom: '-20px',
+					paddingBlock: '0px',
+				},
+			}}
 			items={[
 				'Git tracks your files using “snapshots”, records of the files in your project at a given point in time',
 				'You decide when to take a snapshot and of what files, this is known as a commit',
@@ -372,8 +378,14 @@ export const Presentation = () => (
 		/>
 		<SlideLayout.List
 			title='Making a commit'
-			titleProps={{ style: { marginBlock: '0px', paddingBlock: '0px' } }}
 			listType='ordered'
+			titleProps={{
+				style: {
+					marginBlock: '0px',
+					marginBottom: '-20px',
+					paddingBlock: '0px',
+				},
+			}}
 			items={[
 				<Fragment key='1'>
 					<Text style={{ fontSize: '0.6em', margin: 0, padding: 5 }}>

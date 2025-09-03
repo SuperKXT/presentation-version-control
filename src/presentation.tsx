@@ -122,7 +122,11 @@ export const Presentation = () => (
 						style={{ fontSize: '1em' }}
 					/>
 					<Link
-						href='https://github.com/WiMetrixDev/knowledge/blob/main/version-control/version-control.md'
+						href='https://docs.wimetrix.com/guides/version-control/'
+						style={{ fontSize: '1em' }}
+					/>
+					<Link
+						href='https://github.com/superkxt/presentation-version-control'
 						style={{ fontSize: '1em' }}
 					/>
 				</FlexBox>

@@ -118,7 +118,7 @@ export const Presentation = () => (
 					}}
 				>
 					<Link
-						href='https://version-control.superkxt.com'
+						href='https://superkxt.com/version-control'
 						style={{ fontSize: '1em' }}
 					/>
 					<Link
